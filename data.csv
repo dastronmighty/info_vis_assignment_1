@@ -1,4 +1,4 @@
-Phylum,Class,Order,Family,Genus,Species,Common_name,Female_maturity_(days),Male_maturity_(days),Gestation/Incubation_(days),Weaning_(days),Litter/Clutch_size,Litters/Clutches_per_year,Inter-litter/Interbirth_interval,Birth_weight_(g),Weaning_weight_(g),Adult_weight_(g),Growth_rate_(1/days),Maximum_longevity_(yrs),Specimen_origin,IMR_(per_yr),MRDT_(yrs),Metabolic_rate_(W),Body_mass_(g),Temperature_(K)
+Phylum,Class,Order,Family,Genus,Species,Common_name,Female_maturity_days,Male_maturity_days,GestationperIncubation_days,Weaning_days,LitterperClutch_size,LittersperClutches_per_year,Inter-litterperInterbirth_interval,Birth_weight_g,Weaning_weight_g,Adult_weight_g,Growth_rate_1perdays,Maximum_longevity_yrs,Specimen_origin,IMR_per_yr,MRDT_yrs,Metabolic_rate_W,Body_mass_g,Temperature_K
 Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Daphnia,pulicaria,Daphnia,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.19,unknown,-1.0,-1.0,-1.0,-1.0,-1.0
 Arthropoda,Insecta,Diptera,Drosophilidae,Drosophila,melanogaster,Fruit fly,7.0,7.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.3,captivity,0.05,0.04,-1.0,-1.0,-1.0
 Arthropoda,Insecta,Hymenoptera,Apidae,Apis,mellifera,Honey bee,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,8.0,unknown,-1.0,-1.0,-1.0,-1.0,-1.0
@@ -276,7 +276,7 @@ Chordata,Aves,Charadriiformes,Laridae,Sternula,antillarum,Least tern,1095.0,1095
 Chordata,Aves,Charadriiformes,Laridae,Thalasseus,maximus,Royal tern,1095.0,1095.0,28.0,-1.0,2.0,1.0,-1.0,56.0,-1.0,373.0,-1.0,28.6,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Charadriiformes,Laridae,Thalasseus,sandvicensis,Sandwich tern,1095.0,1095.0,22.0,-1.0,1.0,1.0,-1.0,28.0,-1.0,250.0,-1.0,30.8,unknown,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Charadriiformes,Recurvirostridae,Himantopus,himantopus,Black-winged stilt,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,161.0,0.175,10.2,wild,-1.0,-1.0,-1.0,-1.0,-1.0
-Chordata,Aves,Charadriiformes,Recurvirostridae,Himantopus,mexicanus,Black-necked (Hawaiian) stilt,365.0,365.0,25.0,-1.0,4.0,1.0,-1.0,13.6,-1.0,186.0,-1.0,19.1,unknown,-1.0,-1.0,-1.0,-1.0,-1.0
+Chordata,Aves,Charadriiformes,Recurvirostridae,Himantopus,mexicanus,Black-necked Hawaiian stilt,365.0,365.0,25.0,-1.0,4.0,1.0,-1.0,13.6,-1.0,186.0,-1.0,19.1,unknown,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Charadriiformes,Recurvirostridae,Recurvirostra,avosetta,Pied avocet,730.0,730.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,304.0,0.192,27.8,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Charadriiformes,Scolopacidae,Actitis,hypoleucos,Common sandpiper,365.0,365.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,48.0,-1.0,14.5,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Charadriiformes,Scolopacidae,Arenaria,interpres,Ruddy turnstone,730.0,730.0,22.0,-1.0,4.0,1.0,-1.0,11.42,-1.0,136.0,0.114,22.3,wild,-1.0,-1.0,0.92,90.0,-1.0
@@ -613,7 +613,7 @@ Chordata,Aves,Passeriformes,Muscicapidae,Saxicola,rubetra,Whinchat,365.0,365.0,-
 Chordata,Aves,Passeriformes,Muscicapidae,Saxicola,torquatus,Common stonechat and stonechat,365.0,365.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,10.3,0.5429999999999999,8.8,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Passeriformes,Oriolidae,Oriolus,oriolus,Eurasian golden-oriole,365.0,365.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,79.0,-1.0,14.8,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Passeriformes,Oriolidae,Oriolus,xanthornus,Black-hooded oriole,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,56.3,-1.0,15.5,captivity,-1.0,-1.0,-1.0,-1.0,-1.0
-Chordata,Aves,Passeriformes,Oriolidae,Sphecotheres,viridis,Green figbird (hang-nest),-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,121.5,-1.0,18.0,captivity,-1.0,-1.0,-1.0,-1.0,-1.0
+Chordata,Aves,Passeriformes,Oriolidae,Sphecotheres,viridis,Green figbird hang-nest,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,121.5,-1.0,18.0,captivity,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Passeriformes,Panuridae,Panurus,biarmicus,Bearded parrotbill,365.0,365.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,13.8,-1.0,7.1,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Passeriformes,Paradisaeidae,Paradisaea,apoda,Greater bird-of-paradise,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,172.0,-1.0,12.1,captivity,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Passeriformes,Paridae,Baeolophus,bicolor,Tufted titmouse,365.0,365.0,13.0,-1.0,6.0,1.0,-1.0,-1.0,-1.0,21.0,-1.0,13.3,wild,-1.0,-1.0,-1.0,-1.0,-1.0
@@ -649,7 +649,7 @@ Chordata,Aves,Passeriformes,Parulidae,Setophaga,castanea,Bay-breasted warbler,-1
 Chordata,Aves,Passeriformes,Parulidae,Setophaga,cerulea,Cerulean warbler,365.0,365.0,12.0,-1.0,4.0,1.0,-1.0,-1.0,-1.0,8.625,-1.0,6.0,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Passeriformes,Parulidae,Setophaga,chrysoparia,Golden-cheeked warbler,365.0,365.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,10.2,-1.0,11.0,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Passeriformes,Parulidae,Setophaga,citrina,Hooded warbler,319.0,319.0,12.0,-1.0,4.0,-1.0,-1.0,1.9,-1.0,10.6,-1.0,8.2,wild,-1.0,-1.0,0.21538000000000002,12.0,-1.0
-Chordata,Aves,Passeriformes,Parulidae,Setophaga,coronata,Yellow-rumped (myrtle) warbler,-1.0,-1.0,12.0,-1.0,4.0,1.0,-1.0,-1.0,-1.0,12.0,-1.0,10.0,wild,-1.0,-1.0,0.1895,11.5,-1.0
+Chordata,Aves,Passeriformes,Parulidae,Setophaga,coronata,Yellow-rumped myrtle warbler,-1.0,-1.0,12.0,-1.0,4.0,1.0,-1.0,-1.0,-1.0,12.0,-1.0,10.0,wild,-1.0,-1.0,0.1895,11.5,-1.0
 Chordata,Aves,Passeriformes,Parulidae,Setophaga,discolor,Prairie warbler,-1.0,-1.0,12.0,-1.0,4.0,1.5,-1.0,1.1,-1.0,7.0,-1.0,10.3,wild,-1.0,-1.0,-1.0,-1.0,-1.0
 Chordata,Aves,Passeriformes,Parulidae,Setophaga,dominica,Yellow-throated warbler,365.0,365.0,12.0,-1.0,4.0,2.0,-1.0,-1.0,-1.0,9.7,-1.0,6.1,wild,-1.0,-1.0,0.1604,9.8,-1.0
 Chordata,Aves,Passeriformes,Parulidae,Setophaga,fusca,Blackburnian warbler,-1.0,-1.0,11.0,-1.0,4.0,1.0,-1.0,-1.0,-1.0,9.0,-1.0,8.2,wild,-1.0,-1.0,-1.0,-1.0,-1.0
