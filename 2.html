@@ -1,0 +1,210 @@
+<html>
+
+<head>
+    <title> Eoghan Hogan - 17335293 - Assignment 1 - Question 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1"></script>
+</head>
+
+<body>
+    <table style="width: 850px" cellspacing="5" cellpadding="5">
+        <tbody>
+            <tr>
+                <td style="width: 200px; vertical-align: top;"><strong>Name:&nbsp;</strong></td>
+                <td style="vertical-align: top;">Eoghan Hogan</td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Student Number:</strong></td>
+                <td style="vertical-align: top;">17335293</td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Dataset description:</strong></td>
+                <td style="vertical-align: top;">
+                    <p><a href="https://raw.githubusercontent.com/dastronmighty/info_vis_assignment_1/master/data.csv"
+                            target="_blank" rel="noopener">Animal Age Dataset</a>.</p>
+                    <p>This data set contains many attributes of animal ageing with their full <a
+                            href="https://en.wikipedia.org/wiki/International_Code_of_Zoological_Nomenclature">ICZN</a>
+                        naming.
+                        In addition to the longevity, maturity time, litter size and weaning time,
+                        this dataset provides information on the animals mass, temperature and metabolic rate.</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Initial questions</strong></td>
+                <td style="vertical-align: top;"> <em>How does Incubation Period relate to Clutch Size in
+                        <a href="https://en.wikipedia.org/wiki/Bird">Birds</a>?
+
+                    </em></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <div id="vis" class="container"></div>
+    <script type="text/javascript">
+        var vl_1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/dastronmighty/info_vis_assignment_1/master/data.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "title": {
+                "text": "Aves (Birds) - Incubation Time (Days) vs Clutches (Yearly)",
+                "fontSize": 24
+            },
+            "transform": [{
+                    "filter": {
+                        "field": "GestationperIncubation_days",
+                        "gt": 0
+                    }
+                },
+                {
+                    "filter": {
+                        "field": "LittersperClutches_per_year",
+                        "gt": 0
+                    }
+                },
+                {
+                    "filter": {
+                        "field": "Class",
+                        "equal": "Aves"
+                    }
+                }
+            ],
+            "mark": {
+                "type": "point",
+                "filled": true,
+                "tooltip": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "GestationperIncubation_days",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "Incubation Time (Days)",
+                        "titleFontSize": 20
+                    }
+                },
+                "y": {
+                    "field": "LittersperClutches_per_year",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "Clutches (Yearly)",
+                        "titleFontSize": 20
+                    }
+                },
+                "shape": {
+                    "condition": {
+                        "test": "datum.Common_name == 'California condor'",
+                        "value": "square"
+                    },
+                    "value": "circle"
+                },
+                "size": {
+                    "condition": {
+                        "test": "datum.Common_name == 'California condor'",
+                        "value": 300
+                    },
+                    "value": 60
+                }
+            },
+            "height": 500,
+            "width": 500
+        }
+
+        vegaEmbed("#vis", vl_1);
+    </script>
+    <hr />
+    <table style="width: 850px;" cellspacing="5" cellpadding="5">
+        <tbody>
+            <tr>
+                <td style="width: 200px; vertical-align: top;"><strong>Description:&nbsp;</strong></td>
+                <td style="vertical-align: top;">
+                    This scatterplot is an examination of the relationship between the Incubation Period in days
+                    to the number of clutches per year in birds. I found this interesting as growing up I always
+                    had birds around me since my uncle had an aviary and I never considered how different birds take
+                    longer to mature and there was always less of them so hopefully this can provide some insight.
+
+                    What I was really interested in was if the number of days for incubation would effect the number of
+                    clutches
+                    significantly, For instance I was hoping that the less amount of time in incubation the more
+                    clutches there would be.
+                    And that both does and doesn't look like the case.
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Insight:</strong></td>
+                <td style="vertical-align: top;">
+                    We can see that there is a significant amount of banding in the visualization. The banding occurs
+                    around
+                    each half year mark on the clutches per year axis, starting on 1 per year. This would suggest that
+                    Birds lay eggs on a very predictable time scale.and throughout all species that they dont differ
+                    too much as the majority
+                    of species have 1 or 2 clutches of eggs per year.
+                    <p />
+                    There is some suggestion that if a species has a short incubation period that it has many clutches
+                    due
+                    to the data points at the top left of the graph. However
+                    this seems more like an exception because we can clearly see that in the species that only lay 1
+                    clutch a year
+                    (the bottom band) that there are plenty of species with short incubation periods.
+
+                    In general, the visualization shows that the majority of bird species don't differ
+                    very much in number of clutches and incubation time.
+
+
+                    <p /> There is of course also an outlier <a
+                        href="https://en.wikipedia.org/wiki/California_condor">The Califonia Condor</a> But this is the
+                    most extreme outlier in the data. It is a bird that is able to lay two clutches per year and thoe
+                    clutches take a significant amount of Time
+                    to incubate
+
+                    <p> <strong>From the visualization I would be hesitant to suggest that there is a correlation
+                            between
+                            incubation time and number of clutches per year in birds.
+                        </strong> </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Design considerations</strong></td>
+                <td style="vertical-align: top;">I have used a scatterplot as it is a very effective way to show the
+                    relationship between two quantitative variables, taking advantage of our ability to accurately
+                    perceive variation in both horizontal and vertical position.
+
+                    <p />I considered using just a bar chart and representing the average incubation time for each band
+                    of clutches
+                    per year. Bur this proved to not show much at all and made the data not very useful.
+
+                    <p />I also considered using a bubble chart to represent the average incubation time as the label
+                    and the
+                    size of the bubble would be the count of the number of species in the clutch per year. In testing
+                    this would've
+                    done a good job at showing that as clutch size increases incubation time decreases but unfortunately
+                    it was bias.
+
+                    <p />At the end I stand by the decision that a scatter plot was the bes way to show off this data
+                    even if it
+                    showed us that we cant really answer the question I posed.
+                </td>
+
+            </tr>
+            <tr>
+                <td style="width: 200px; vertical-align: top;"><strong>Data filtering and transformation:&nbsp;</strong>
+                </td>
+                <td style="vertical-align: top;">
+                    The data has all classes of animals and this question was specifically pertaining to Birds (Aves) so
+                    I
+                    had to filter out animals not in the class Aves.
+
+                    <p /> There were also some Birds in my data that didn't have an incubation time recorded so they
+                    were filtered out.
+                    <p />Birds that didn't have a number of clutches per year recorded were also filtered out
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

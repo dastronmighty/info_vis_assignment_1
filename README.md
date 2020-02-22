@@ -8,4 +8,10 @@
 
 # Questions Posed about data
 
-- Does an animals sex have an effect on how long it will take to mature
+- Does a mammals sex have an effect on how long it will take to mature
+- How does Incubation Period relate to Clutch Size in Birds
+- Which families are the biggest in each Class Mammalia (Mammals), Aves (Birds), Amphibians (Amphibia) and Reptiles (Reptilia)
+
+# Data Preprocessing
+
+## What changes I made to the original data?

@@ -1,56 +1,179 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
-   
-      
-    
-    
-    
-      
-   
-   
-      <table style="width: 850px;" cellspacing="5" cellpadding="5">
-         <tbody>
-            <tr>
-               <td style="width: 200px;vertical-align: top;"><strong>Name:&#160;</strong></td>
-               <td style="vertical-align: top;">YOUR NAME HERE</td>
-            </tr>
-            <tr>
-               <td style="vertical-align: top;"><strong>Student Number:</strong></td>
-               <td style="vertical-align: top;">YOUR STUDENT NUMBER HERE</td>
-            </tr>
-            <tr>
-               <td style="vertical-align: top;"><strong>Dataset description:</strong></td>
-               <td style="vertical-align: top;"> YOUR DATA SET DESCRIPTION HERE
-               </td>
-            </tr>
-            <tr>
-               <td style="vertical-align: top;"><strong>Initial questions</strong></td>
-               <td style="vertical-align: top;">YOUR INITIAL QUESTIONS HERE</td>
-            </tr>
-         </tbody>
-      </table>
-      <hr/>
-      <div></div>
-      <hr/>
-      <table style="width: 850px;" cellspacing="5" cellpadding="5">
-         <tbody>
-            <tr>
-               <td style="width: 200px;vertical-align: top;"><strong>Description:&#160;</strong></td>
-               <td style="vertical-align: top;">YOUR GRAPH DESCRIPTION HERE</td>
-            </tr>
-            <tr>
-               <td style="vertical-align: top;"><strong>Insight:</strong></td>
-               <td style="vertical-align: top;">YOUR INSIGHT HERE</td>
-            </tr>
-            <tr>
-               <td style="vertical-align: top;"><strong>Design considerations</strong></td>
-               <td style="vertical-align: top;">YOUR DESIGN CONSIDERATIONS HERE</td>
-            </tr>
-            <tr>
-               <td style="width: 200px;vertical-align: top;"><strong>Data filtering and transformation:&#160;</strong></td>
-               <td style="vertical-align: top;">YOUR DATA FILTERING AND TRANSFORMATION HERE</td>
-            </tr>
-         </tbody>
-      </table>
-      
-   
-<script type="text/javascript" src="/d2l/common/math/MathML.js?v=20.20.1.19936-31 "></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() { D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=MML_HTMLorMML','https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'); });</script></body></html>
+﻿<html>
+
+<head>
+   <title> Eoghan Hogan - 17335293 - Assignment 1 - Question 1</title>
+   <script src="https://cdn.jsdelivr.net/npm/vega@5.9.0"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.2"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1"></script>
+</head>
+
+<body>
+   <table style="width: 850px" cellspacing="5" cellpadding="5">
+      <tbody>
+         <tr>
+            <td style="width: 200px; vertical-align: top;"><strong>Name:&nbsp;</strong></td>
+            <td style="vertical-align: top;">Eoghan Hogan</td>
+         </tr>
+         <tr>
+            <td style="vertical-align: top;"><strong>Student Number:</strong></td>
+            <td style="vertical-align: top;">17335293</td>
+         </tr>
+         <tr>
+            <td style="vertical-align: top;"><strong>Dataset description:</strong></td>
+            <td style="vertical-align: top;">
+               <p><a href="https://raw.githubusercontent.com/dastronmighty/info_vis_assignment_1/master/data.csv"
+                     target="_blank" rel="noopener">Animal Age Dataset</a>.</p>
+               <p>This data set contains many attributes of animal ageing with their full <a
+                     href="https://en.wikipedia.org/wiki/International_Code_of_Zoological_Nomenclature">ICZN</a>
+                  naming.
+                  In addition to the longevity, maturity time, litter size and weaning time,
+                  this dataset provides information on the animals mass, temperature and metabolic rate.</p>
+            </td>
+         </tr>
+         <tr>
+            <td style="vertical-align: top;"><strong>Initial questions</strong></td>
+            <td style="vertical-align: top;"> <em>Does a mammals sex have an effect on how long it will take to mature?
+               </em></td>
+         </tr>
+      </tbody>
+   </table>
+   <hr />
+   <div id="vis" class="container"></div>
+   <script type="text/javascript">
+      var vl_1 = {
+         "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+         "data": {
+            "url": "https://raw.githubusercontent.com/dastronmighty/info_vis_assignment_1/master/data.csv",
+            "format": {
+               "type": "csv"
+            }
+         },
+         "title": {
+            "text": "Male Maturity Time vs Female Maturity Time (Mammals)",
+            "fontSize": 30
+         },
+         "transform": [{
+               "filter": "datum.Female_maturity_days > 0"
+            },
+            {
+               "filter": "datum.Male_maturity_days > 0"
+            },
+            {
+               "filter": "datum.Female_maturity_days < 4500"
+            },
+            {
+               "filter": "datum.Male_maturity_days < 4500"
+            },
+            {
+               "filter": {
+                  "field": "Class",
+                  "equal": "Mammalia"
+               }
+            }
+         ],
+         "mark": {
+            "type": "circle",
+            "tooltip": true
+         },
+         "encoding": {
+            "y": {
+               "bin": {
+                  "maxbins": 30
+               },
+               "field": "Male_maturity_days",
+               "type": "quantitative",
+               "axis": {
+                  "title": "Male Maturity Time (Days)",
+                  "titleFontSize": 20
+               }
+            },
+            "x": {
+               "bin": {
+                  "maxbins": 30
+               },
+               "field": "Female_maturity_days",
+               "type": "quantitative",
+               "axis": {
+                  "title": "Female Maturity Time (Days)",
+                  "titleFontSize": 20
+               }
+            },
+            "size": {
+               "aggregate": "count",
+               "type": "quantitative"
+            }
+         },
+         "height": 800,
+         "width": 800
+      }
+
+      vegaEmbed("#vis", vl_1);
+   </script>
+   <hr />
+   <table style="width: 850px;" cellspacing="5" cellpadding="5">
+      <tbody>
+         <tr>
+            <td style="width: 200px; vertical-align: top;"><strong>Description:&nbsp;</strong></td>
+            <td style="vertical-align: top;">This binned scatterplot shows the relationship between the maturity time
+               of
+               the male part and female part of a species. Each point represents a cluster of species that have around
+               the
+               the same male and female maturity time. Hovering over a point will reveal the maturity time of the sexes
+               of the clustered species and how many species are in that range.</td>
+         </tr>
+         <tr>
+            <td style="vertical-align: top;"><strong>Insight:</strong></td>
+            <td style="vertical-align: top;">
+               In general, the visualization shows that the majority of species, that we have data for, have about the
+               same maturity times for sexes. However, we can see there is a lot of noise around the centerline. We can
+               also see that there are also more points above the centerline than below it which would suggest that we
+               could, in general, say that a species sexes either have the same maturity time or the males have a
+               longer maturity time.
+
+               <p /> There is of course, as we can see, noise along the diagonal and outliers. However I would
+               be quick to point out that there is a lot of data here and that the data on the diagonal far outnumbers
+               the
+               data not lying on the diagonal.
+
+               <p> <strong>We cannot say if a mammals Sex has anything to do with how long it will take to
+                     mature</strong> </p>
+            </td>
+         </tr>
+         <tr>
+            <td style="vertical-align: top;"><strong>Design considerations</strong></td>
+            <td style="vertical-align: top;">I have used a binned scatterplot as it is a very effective way to show the
+               relationship between two quantitative variables, taking advantage of our ability to accurately perceive
+               variation in both horizontal and vertical position. The reason I went with a binned scatterplot was so I
+               could more accurately represent the data.
+               <p />I considered using just a <a
+                  href="https://vega.github.io/vega-lite/examples/point_2d.html">scatterplot</a> but
+               since the data is clustered near the bottom it is hard to
+               see
+               just how many datapoints there are with a scatterplot. It would have suffered from overplotting.
+               <p />I also considered using a <a
+                  href="https://vega.github.io/vega-lite/examples/rect_binned_heatmap.html">binned heatmaps</a> but
+               again since the data is clustered near the bottom the heatmap shows
+               one big cluster and the rest of data appears as nothing in comparison.
+         </tr>
+         <tr>
+            <td style="width: 200px; vertical-align: top;"><strong>Data filtering and transformation:&nbsp;</strong>
+            </td>
+            <td style="vertical-align: top;">
+               The data has all classes of animals and this question was specificaly pertaining to mammals so I
+               had to filter out animals not in the class Mammalia.
+               <p />
+               The data has some very strange outliers. There are 3 mammals which take over 10 years to mature and when
+               we include these
+               3 point in our plot it completely fails to convey the linear relationship that shows sex does not effect
+               maturity time.
+               So i filtered out any mammal that took over 10 years to mature
+
+               <p /> There were also some mammals in my data that didn't have a maturity time recorded so I removed them
+               using a filter also
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</body>
+
+</html>

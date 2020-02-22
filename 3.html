@@ -1,0 +1,275 @@
+<html>
+
+<head>
+    <title> Eoghan Hogan - 17335293 - Assignment 1 - Question 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1"></script>
+</head>
+
+<body>
+    <table style="width: 850px" cellspacing="5" cellpadding="5">
+        <tbody>
+            <tr>
+                <td style="width: 200px; vertical-align: top;"><strong>Name:&nbsp;</strong></td>
+                <td style="vertical-align: top;">Eoghan Hogan</td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Student Number:</strong></td>
+                <td style="vertical-align: top;">17335293</td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Dataset description:</strong></td>
+                <td style="vertical-align: top;">
+                    <p><a href="https://raw.githubusercontent.com/dastronmighty/info_vis_assignment_1/master/data.csv"
+                            target="_blank" rel="noopener">Animal Age Dataset</a>.</p>
+                    <p>This data set contains many attributes of animal ageing with their full <a
+                            href="https://en.wikipedia.org/wiki/International_Code_of_Zoological_Nomenclature">ICZN</a>
+                        naming.
+                        In addition to the longevity, maturity time, litter size and weaning time,
+                        this dataset provides information on the animals mass, temperature and metabolic rate.</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Initial questions</strong></td>
+                <td style="vertical-align: top;"> <em>Which families are the biggest in each Class <a
+                            href="https://en.wikipedia.org/wiki/Mammalia">Mammalia (Mammals)</a>, <a
+                            href="https://en.wikipedia.org/wiki/Aves">Aves (Birds)</a>,<a
+                            href="https://en.wikipedia.org/wiki/Amphibia">Amphibians (Amphibia)</a> and <a
+                            href="https://en.wikipedia.org/wiki/Reptilia">Reptiles (Reptilia)</a>
+                    </em></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <div id="vis" class="container"></div>
+    <script type="text/javascript">
+        var vl_1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/dastronmighty/info_vis_assignment_1/master/data.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "title": {
+                "text": "Count of Species in Families per Class",
+                "fontSize": 30,
+                "align": "left"
+            },
+            "transform": [{
+                "filter": {
+                    "field": "Class",
+                    "oneOf": ["Mammalia", "Aves", "Amphibia", "Reptilia"]
+                }
+            }],
+            "facet": {
+                "row": {
+                    "field": "Class",
+                    "type": "nominal"
+                }
+            },
+            "spec": {
+                "mark": {
+                    "type": "bar",
+                    "tooltip": true
+                },
+                "encoding": {
+                    "y": {
+                        "axis": {
+                            "title": "Number of species in Family",
+                            "titleFontSize": 15
+                        },
+                        "type": "quantitative",
+                        "aggregate": "count"
+                    },
+                    "x": {
+                        "axis": {
+                            "title": "Families",
+                            "titleFontSize": 20,
+                            "labelFontSize": 0,
+                            "tickSize": 0
+                        },
+                        "field": "Family",
+                        "type": "nominal",
+                        "sort": {
+                            "op": "count",
+                            "order": "descending"
+                        }
+                    }
+                },
+                "width": 1200,
+                "height": 200
+            }
+        }
+
+        vegaEmbed("#vis", vl_1);
+    </script>
+    <hr />
+    <table style="width: 850px;" cellspacing="5" cellpadding="5">
+        <tbody>
+            <tr>
+                <td style="width: 200px; vertical-align: top;"><strong>Description:&nbsp;</strong></td>
+                <td style="vertical-align: top;">
+                    This Bar chart shows which family, inside each of the chosen classes in Animalia, has the largest
+                    count. A Family is a grouping between Order and Genus in Taxonomic Rankings. There are no hard rules
+                    to belong
+                    inside a Family in the Zoological world just that each animal in a family is very closely related
+                    but not
+                    the direct same species.
+                    <p />Families can be used for evolutionary, palaeontological and genetic studies because they are
+                    more stable than lower taxonomic levels such as genera and species. For this reason being able to
+                    identify
+                    the ranking of families inside a class may be very useful.
+                    <p />As for me I thought the question was interesting as it is not an immediately attainable fact
+                    for someone who
+                    is not familiar with zoology sites.
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Insight:</strong></td>
+                <td style="vertical-align: top;">
+                    Well Thanks to vega-lite's ability to include a tooltip we can readily find out which
+                    families are the biggest in each Class.
+                    The top Three Families in each class are as follows:
+                    <ul>
+                        <li>
+                            <p>Mammalia</p>
+                            <ol>
+                                <li>
+                                    <p><a href="https://en.wikipedia.org/wiki/Bovidae"><strong>Bovidae</strong></a>.
+                                        Bovine
+                                        Animals (Aka cloven-hoofed Animals)</p>
+                                </li>
+                                <li>
+                                    <p><a
+                                            href="https://en.wikipedia.org/wiki/Vespertilionidae"><strong>Vespertilionidae</strong></a>.
+                                        microbats
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><a
+                                            href="https://en.wikipedia.org/wiki/Cercopithecidae"><strong>Cercopithecidae</strong></a>.
+                                        Old World Monkeys
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p>Aves</p>
+                            <ol>
+                                <li>
+                                    <p><a
+                                            href="https://en.wikipedia.org/wiki/Psittacidae"><strong>Psittacidae</strong></a>.
+                                        True Parrots
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><a href="https://en.wikipedia.org/wiki/Anatidae"><strong>Anatidae</strong></a>.
+                                        Water Birds
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><a
+                                            href="https://en.wikipedia.org/wiki/Accipitridae"><strong>Accipitridae</strong></a>.
+                                        strongly hooked billed birds
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p>Amphibia</p>
+                            <ol>
+                                <li>
+                                    <p><a href="https://en.wikipedia.org/wiki/Ranidae"><strong>Ranidae</strong></a>.
+                                        True Frogs
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><a
+                                            href="https://en.wikipedia.org/wiki/Salamandridae"><strong>Salamandridae</strong></a>.
+                                        True Salamanders
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><a href="https://en.wikipedia.org/wiki/Bufonidae"><strong>Bufonidae</strong></a>.
+                                        True Toads
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p>Reptilia</p>
+                            <ol>
+                                <li>
+                                    <p><a
+                                            href="https://en.wikipedia.org/wiki/Colubridae"><strong>Colubridae</strong></a>.
+                                        Colubrid Snakes
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><a href="https://en.wikipedia.org/wiki/Viperidae"><strong>Viperidae</strong></a>.
+                                        Vipers
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><a
+                                            href="https://en.wikipedia.org/wiki/Geoemydidae"><strong>Geoemydidae</strong></a>.
+                                        Turtles
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                    Also thanks to the nature of the bar chart we can see the Top 3 Biggest families over all.
+                    <ol>
+                        <li>
+                            <p><a href="https://en.wikipedia.org/wiki/Psittacidae"><strong>Psittacidae</strong></a>.
+                                True Parrots
+                            </p>
+                        </li>
+                        <li>
+                            <p><a href="https://en.wikipedia.org/wiki/Anatidae"><strong>Anatidae</strong></a>.
+                                Water Birds
+                            </p>
+                        </li>
+                        <li>
+                            <p><a href="https://en.wikipedia.org/wiki/Bovidae"><strong>Bovidae</strong></a>.
+                                Bovine
+                                Animals (Aka cloven-hoofed Animals)</p>
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><strong>Design considerations</strong></td>
+                <td style="vertical-align: top;">I have used a barchart as it is very effective to show this type of
+                    nominal data attached to a quantitative value. This ordered layout clearly shows me the data in a
+                    way that is easy
+                    to read with the help of a tooltip. The reason a Tooltip is used is because when dealing with a
+                    facet in vega-lite it will not show the values on each sub graph it will only show all the families
+                    on the bottom
+                    which is incredibly difficult to read. so I removed the label values on the bottom.
+                    This barchart shows us two useful pieces of information. The biggest families in each class and the
+                    biggest families across the classes.
+
+                    <p />I also considered using a bubble chart to represent the data where the size of the bubble
+                    is proportional to the bubble size and the color of the bubble would be the different classes.
+                    I decided not to use this as due to the amount of data we have we would have many many bubbles and
+                    it
+                    would be quite unwieldy.
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; vertical-align: top;"><strong>Data filtering and transformation:&nbsp;</strong>
+                </td>
+                <td style="vertical-align: top;">
+                    The data has all classes of animals and this question was specifically pertaining to some classes
+                    I had to scrape out just Mammalia, Aves, Amphibia and Reptilia just for this question.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
