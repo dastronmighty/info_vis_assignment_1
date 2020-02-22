@@ -15,3 +15,6 @@
 # Data Preprocessing
 
 ## What changes I made to the original data?
+
+initially I quickly imported the data into a pandas dataframe in python and removed fields I didnt need.
+I also took out any data that was labeled "Questionable".
